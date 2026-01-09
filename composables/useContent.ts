@@ -1,7 +1,86 @@
 import type { SiteContent } from '~/types'
+import type { Locale } from './useLocale'
 
-export const useContent = () => {
-  const content: SiteContent = {
+const contentByLocale: Record<Locale, SiteContent> = {
+  en: {
+    hero: {
+      firstName: 'EDSON',
+      lastName: 'JUNIOR',
+      description: "I'm a developer with a degree in Systems Analysis and Development. Passionate about technology, I'm always looking to improve my skills and expand my knowledge. I enjoy sharing experiences and learning from others, as I believe collaboration is one of the most enriching parts of a career. The challenges and satisfaction I find in my work fuel this passion every day. Besides technology, my hobbies include photography, traveling, and practicing CrossFit.",
+      profileImageUrl: '/assets/images/eu.jpg',
+      profileImageAlt: 'Edson Junior'
+    },
+
+    socialLinks: [
+      {
+        name: 'GitHub',
+        icon: 'fab fa-github',
+        url: 'https://github.com/roinuj16',
+        ariaLabel: "Edson Junior's GitHub"
+      },
+      {
+        name: 'LinkedIn',
+        icon: 'fab fa-linkedin-in',
+        url: 'https://www.linkedin.com/in/roinuj16/',
+        ariaLabel: "Edson Junior's LinkedIn"
+      },
+      {
+        name: 'Gmail',
+        icon: 'fas fa-envelope',
+        url: 'mailto:junior.si16@gmail.com',
+        ariaLabel: "Edson Junior's Email"
+      },
+      {
+        name: 'Instagram',
+        icon: 'fab fa-instagram',
+        url: 'https://www.instagram.com/jrempixel',
+        ariaLabel: "Edson Junior's Instagram"
+      },
+      {
+        name: 'Unsplash',
+        icon: 'fab fa-unsplash',
+        url: 'https://unsplash.com/@roinuj16',
+        ariaLabel: "Edson Junior's Unsplash Portfolio"
+      }
+    ],
+
+    skills: [
+      {
+        id: 'dev',
+        title: 'Developer',
+        description: 'Explore my journey as a developer and my passion for technology. Creating innovative solutions with clean and efficient code.',
+        icon: 'fas fa-code',
+        iconColor: 'dev',
+        imageUrl: '/assets/images/eu.jpg',
+        linkUrl: 'https://www.linkedin.com/in/roinuj16/',
+        linkExternal: true
+      },
+      {
+        id: 'photo',
+        title: 'Photographer',
+        description: 'Photography is my way of seeing the world through different eyes. Check out captures that tell stories and preserve unique moments.',
+        icon: 'fas fa-camera',
+        iconColor: 'photo',
+        imageUrl: '/assets/images/eu.jpg',
+        linkUrl: 'https://www.instagram.com/jrempixel',
+        linkExternal: true,
+        animationDelay: '0.2s'
+      },
+      {
+        id: 'travel',
+        title: 'Travel',
+        description: 'Traveling is about expanding horizons and collecting unique experiences. Discover destinations that marked my journey and created unforgettable memories.',
+        icon: 'fas fa-plane-departure',
+        iconColor: 'travel',
+        imageUrl: '/assets/images/eu.jpg',
+        linkUrl: 'https://www.instagram.com/jrempixel',
+        linkExternal: true,
+        animationDelay: '0.4s'
+      }
+    ]
+  },
+
+  pt: {
     hero: {
       firstName: 'EDSON',
       lastName: 'JUNIOR',
@@ -78,6 +157,12 @@ export const useContent = () => {
       }
     ]
   }
+}
+
+export const useContent = () => {
+  const { locale } = useLocale()
+
+  const content = computed(() => contentByLocale[locale.value])
 
   return {
     content

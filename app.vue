@@ -3,6 +3,11 @@
     <!-- Background Effects -->
     <layout-background-effects />
 
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50">
+      <ui-language-selector />
+    </div>
+
     <!-- Main Container -->
     <layout-container>
 
@@ -19,5 +24,10 @@
 </template>
 
 <script setup lang="ts">
+const { initLocale } = useLocale()
 const { content } = useContent()
+
+onMounted(() => {
+  initLocale()
+})
 </script>
