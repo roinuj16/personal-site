@@ -125,4 +125,39 @@
   .backdrop-blur-tech {
     backdrop-filter: blur(20px);
   }
+
+  /* Leaflet Map Styles */
+  .leaflet-container {
+    background: #0A0E27 !important;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .leaflet-control-attribution {
+    background: rgba(10, 14, 39, 0.8) !important;
+    color: #6b7280 !important;
+    font-size: 10px !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .leaflet-control-attribution a {
+    color: #00E0FF !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: rgba(10, 14, 39, 0.95) !important;
+    border: 1px solid rgba(0, 224, 255, 0.3) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.2) !important;
+  }
+
+  .leaflet-popup-content {
+    margin: 0 !important;
+    color: #fff !important;
+  }
+
+  .leaflet-popup-tip {
+    background: rgba(10, 14, 39, 0.95) !important;
+    border: 1px solid rgba(0, 224, 255, 0.3) !important;
+  }
+
 }

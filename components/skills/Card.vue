@@ -1,7 +1,8 @@
 <template>
   <component
-    :is="linkUrl ? 'a' : 'div'"
-    :href="linkUrl"
+    :is="linkComponent"
+    :href="linkExternal ? linkUrl : undefined"
+    :to="!linkExternal && linkUrl ? linkUrl : undefined"
     :target="linkExternal ? '_blank' : undefined"
     :rel="linkExternal ? 'noopener noreferrer' : undefined"
     :aria-label="linkUrl ? `Ver mais sobre ${title}` : undefined"
@@ -76,6 +77,12 @@ const iconColorClass = computed(() => {
     travel: 'text-electric-blue'
   }
   return colors[props.iconColor]
+})
+
+const linkComponent = computed(() => {
+  if (!props.linkUrl) return 'div'
+  if (props.linkExternal) return 'a'
+  return resolveComponent('NuxtLink')
 })
 </script>
 

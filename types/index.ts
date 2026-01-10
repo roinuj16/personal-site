@@ -30,3 +30,17 @@ export interface SiteContent {
   socialLinks: SocialLink[]
   skills: SkillCard[]
 }
+
+export interface TripLocation {
+  id: string
+  slug: string
+  name: string
+  country: string
+  coordinates: [number, number]
+  thumbnailUrl: string
+  description?: string
+}
+
+export interface TripsContent {
+  trips: TripLocation[]
+}

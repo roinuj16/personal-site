@@ -21,6 +21,7 @@ logs
 CLAUDE.md
 design-futurista-exemplo.html
 prompt-meu-site.md
+public/ideias-apagar
 
 # Local env files
 .env

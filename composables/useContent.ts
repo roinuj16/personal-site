@@ -73,8 +73,8 @@ const contentByLocale: Record<Locale, SiteContent> = {
         icon: 'fas fa-plane-departure',
         iconColor: 'travel',
         imageUrl: '/assets/images/eu.jpg',
-        linkUrl: 'https://www.instagram.com/jrempixel',
-        linkExternal: true,
+        linkUrl: '/trips',
+        linkExternal: false,
         animationDelay: '0.4s'
       }
     ]
@@ -151,8 +151,8 @@ const contentByLocale: Record<Locale, SiteContent> = {
         icon: 'fas fa-plane-departure',
         iconColor: 'travel',
         imageUrl: '/assets/images/eu.jpg',
-        linkUrl: 'https://www.instagram.com/jrempixel',
-        linkExternal: true,
+        linkUrl: '/trips',
+        linkExternal: false,
         animationDelay: '0.4s'
       }
     ]
